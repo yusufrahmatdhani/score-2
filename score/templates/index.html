@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student score</title>
+</head>
+<body>
+    <!-- <h1>Daftar Nilai Siswa</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                Nama: {{ student['name'] }} - Nilai: {{ student['score'] }}
+                {% if student['score'] > 90 %}
+                    - Congratulations
+                {% elif student['score'] >= 76 %}
+                    - Very good
+                {% else %}
+                    - maaf, Anda tidak lulus
+                {% endif %}
+            </li>
+        {% endfor %} -->
+    </ul>
+
+    <h2>Table Headers</h2>
+
+    <p>Use the TH element to define table headers.</p>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+    </style>
+    
+    <table style="width:100%">
+      <tr>
+        <th>name</th>
+        <th>score</th>
+      </tr>
+      <tr>
+        <td>sandrine</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Gergeley</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Frieda</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Fritz</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>Sirius</td>
+        <td>75</td>
+      </tr>
+    </table>
+
+</body>
+</html>
