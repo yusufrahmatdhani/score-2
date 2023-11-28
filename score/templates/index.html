@@ -3,61 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student score</title>
+    <title>Student score</title>
+<style>
+    table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>
 </head>
 <body>
-    <!-- <h1>Daftar Nilai Siswa</h1>
-    <ul>
-        {% for student in students %}
-            <li>
-                Nama: {{ student['name'] }} - Nilai: {{ student['score'] }}
-                {% if student['score'] > 90 %}
-                    - Congratulations
-                {% elif student['score'] >= 76 %}
-                    - Very good
-                {% else %}
-                    - maaf, Anda tidak lulus
-                {% endif %}
-            </li>
-        {% endfor %} -->
-    </ul>
-
-    <h2>Table Headers</h2>
-
-    <p>Use the TH element to define table headers.</p>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-          }
-    </style>
-    
-    <table style="width:100%">
-      <tr>
-        <th>name</th>
-        <th>score</th>
-      </tr>
-      <tr>
-        <td>sandrine</td>
-        <td>100</td>
-      </tr>
-      <tr>
-        <td>Gergeley</td>
-        <td>87</td>
-      </tr>
-      <tr>
-        <td>Frieda</td>
-        <td>92</td>
-      </tr>
-      <tr>
-        <td>Fritz</td>
-        <td>40</td>
-      </tr>
-      <tr>
-        <td>Sirius</td>
-        <td>75</td>
-      </tr>
-    </table>
-
+    <div class="container">
+        <div class="section">
+        <h2>Add a score</h2>
+        <form action="/" method="POST">
+            <input name="name" placeholder="name" type="text">
+            <input name="score" placeholder="score" type="number">
+            <input type="submit" value="add score">
+        </form>
+        </div>
+        <div class="section">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Edit</th>
+                </tr>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.score }}</td>
+                    <td>
+                        <a href="/edit/{{ student['id'] }}">Edit</a>
+                        <a href="/delete/{{ student['id'] }}"onclick="return confirm('Apakah Anda Yakin Akan Menghapus?');">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 </body>
 </html>
